@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".library.BluetoothFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/devicesRV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/recycler_view_item"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            android:tint="@android:color/white"
+            android:src="@drawable/ic_bluetooth_searching_black_24dp"/>
+
+    <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/loadingLL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:padding="@dimen/fab_margin">
+
+        <ProgressBar
+                android:id="@+id/progressPB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/fab_margin"/>
+
+        <TextView
+                android:id="@+id/messageTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bottom_sheet_behavior"/>
+
+
+        <com.google.android.material.button.MaterialButton
+                android:visibility="gone"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton.Icon"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:text="@string/cancel"/>
+
+    </LinearLayout>
+
+</FrameLayout>
